@@ -10,12 +10,15 @@ df=pd.read_csv("iris.csv")
 #du tableau correspondant aux caracteristiques sepal_length et
 #petal_length(entrees)
 X_data=df.iloc[0:100,[0,2]].values
+
 #recuperation des 100 premieres lignes de la derniere colonne
 #correspondant a l’espece de l’iris (sorties/classes)
 y_data=df.iloc[0:100,4].values
+
 #classification binaire : transformation des labels en valeurs −1 ou 1
 #setosa <=> −1 ou non setosa <=> 1
 y_data=np.where(y_data=="setosa",-1,1)
+
 #attributiondecouleursdifferentesaux2classes
 colors={-1:'red',1:'blue'}
 y_colors=[colors[y] for y in y_data]
